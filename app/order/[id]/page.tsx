@@ -1,4 +1,3 @@
-
 import OrderForm from './OrderForm';
 
 export async function generateStaticParams() {
@@ -15,6 +14,11 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function OrderPage({ params }: { params: { id: string } }) {
-  return <OrderForm carId={params.id} />;
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default async function OrderPage({ params }: PageProps) {
+  const { id } = await params;
+  return <OrderForm carId={id} />;
 }

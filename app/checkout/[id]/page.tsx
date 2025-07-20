@@ -1,4 +1,3 @@
-
 import CheckoutForm from './CheckoutForm';
 
 export async function generateStaticParams() {
@@ -15,6 +14,11 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function CheckoutPage({ params }: { params: { id: string } }) {
-  return <CheckoutForm carId={params.id} />;
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default async function CheckoutPage({ params }: PageProps) {
+  const { id } = await params;
+  return <CheckoutForm carId={id} />;
 }
