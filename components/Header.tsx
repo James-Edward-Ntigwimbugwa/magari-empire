@@ -13,7 +13,7 @@ export default function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Pacifico, serif' }}>
+            <Link href="/" className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'serif' }}>
               Magari Empire
             </Link>
           </div>
