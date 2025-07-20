@@ -1,4 +1,3 @@
-
 import CarDetail from './CarDetail';
 
 export async function generateStaticParams() {
@@ -15,6 +14,11 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function CarPage({ params }: { params: { id: string } }) {
-  return <CarDetail carId={params.id} />;
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default async function CarPage({ params }: PageProps) {
+  const { id } = await params;
+  return <CarDetail carId={id} />;
 }
