@@ -3,7 +3,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
@@ -12,10 +11,9 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-blue-600 flex items-center" style={{ fontFamily: 'serif' }}>
-              <img src="/assets/magari-empire.jpeg" alt="Magari Empire Logo" className="w-8 h-8 mr-2" />
-              Magari Empire
+            <img src="/magari-empire.jpeg" alt="Magari Empire Logo" className="w-8 h-8 mr-2" />              Magari Empire
             </Link>
           </div>
 
